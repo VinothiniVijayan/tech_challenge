@@ -1,0 +1,7 @@
+{
+  "name": "TechChallenge",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

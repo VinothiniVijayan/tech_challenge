@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profile Details</ion-title>
+    <ion-buttons  class="saveBtn" end>
+      <button *ngIf="isEdit" (click)="saveDetails()">Save</button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light" padding>
+  <div id="container">
+    <div profile-section text-center>
+      <div class="profile">
+        <ion-img *ngIf="base64Image" [src]="base64Image"></ion-img>
+        <ion-icon *ngIf="!base64Image" slot="start" ios="person-circle" md="person" (click)="uploadProfPic()">
+        </ion-icon>
+
+      </div>
+      <button ion-button clear camera *ngIf="hideCamera" (click)="uploadProfPic()">
+        <ion-icon class="customIcon icon-camera"></ion-icon>
+      </button>
+    </div>
+    <ion-card>
+    <ion-item no-lines>
+      <ion-label position="floating">First Name</ion-label>
+      <ion-input *ngIf="isEdit" [(ngModel)]="firstName" type="text" required></ion-input>
+      <p *ngIf="!isEdit">{{firstName}}</p>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input *ngIf="isEdit" [(ngModel)]="lastName" type="text" required></ion-input>
+      <p *ngIf="!isEdit">{{lastName}}</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input *ngIf="isEdit" [(ngModel)]="emailId" type="text" required></ion-input>
+      <p *ngIf="!isEdit">{{emailId}}</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Mobile Number</ion-label>
+      <ion-input *ngIf="isEdit" [(ngModel)]="mobileNo" type="tel" maxlength="10" required></ion-input>
+      <p *ngIf="!isEdit">{{mobileNo}}</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Address</ion-label>
+      <ion-textarea *ngIf="isEdit" [(ngModel)]="address" required></ion-textarea>
+      <p *ngIf="!isEdit">{{address}}</p>
+    </ion-item>
+  </ion-card>
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-button color="dark" expand="block" class="editBtn" fill="outline" [disabled]="isEdit" (click)="editDetails()">Edit</ion-button>
+  <ion-button color="dark" expand="block" class="changePwdBtn" fill="outline" (click)="changePassword()">Change Password
+  </ion-button>
+
+</ion-footer>

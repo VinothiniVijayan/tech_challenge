@@ -1,0 +1,28 @@
+<ion-content scroll="true"  color="light">
+  <div id="container">
+    <form>
+      <ion-item lines="full">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" #email required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" #password required></ion-input>
+      </ion-item>
+      <ion-button class="ion-margin-top" type="submit" expand="block" color="light" (click)="onSubmit(email, password)">
+        Create Account
+      </ion-button>
+
+      <ion-item color="danger" class="ion-text-center">
+        <ion-label>Or</ion-label>
+      </ion-item>
+
+      <ion-button type="submit" (click)="logIn(email, password)" expand="block" color="dark" expand="block"
+        fill="outline">Login</ion-button>
+        <ion-button type="submit" (click)="loginWithGmail(email, password)" expand="block" color="dark" expand="block"
+        fill="outline">Login with Gmail</ion-button>
+        <ion-button type="submit" (click)="logIn(email, password)" expand="block" color="dark" expand="block"
+        fill="outline">Login with Facebook</ion-button>
+    </form>
+  </div>
+</ion-content>

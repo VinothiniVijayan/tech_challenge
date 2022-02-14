@@ -1,0 +1,53 @@
+
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Create Account</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true" color="light" padding>
+    <div id="container">
+      <ion-item no-lines>
+        <ion-label position="floating">First Name</ion-label>
+        <ion-input [(ngModel)]="firstName" type="text" required></ion-input>
+      </ion-item>
+  
+      <ion-item no-lines>
+        <ion-label position="floating">Last Name</ion-label>
+        <ion-input [(ngModel)]="lastName" type="text" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input [(ngModel)]="emailId" type="text" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Mobile Number</ion-label>
+        <ion-input [(ngModel)]="mobileNo" type="tel" maxlength="10" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Address</ion-label>
+        <ion-textarea [(ngModel)]="address" required></ion-textarea>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input [(ngModel)]="password" type="password" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Confirm Password</ion-label>
+        <ion-input [(ngModel)]="confirmPwd" type="password" required></ion-input>
+      </ion-item>
+  
+    </div>
+  </ion-content>
+  <ion-footer>
+    <ion-button expand="block" fill="outline" (click)="registerAccount()">Register</ion-button>
+  
+  </ion-footer>
