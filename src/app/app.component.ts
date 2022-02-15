@@ -25,10 +25,18 @@ export class AppComponent {
     });
     console.log("AppvErsion", this.appVersion.getVersionCode())
 
+    const user = JSON.parse(localStorage.getItem('user'));
+
     const userDetails = JSON.parse(localStorage.getItem('userDetails'));
-    if(userDetails){
-    this.username = userDetails.firstName + " " + userDetails.lastName;
+    if (userDetails) {
+      this.username = userDetails.firstName + " " + userDetails.lastName;
+
+    } else if (user) {
+      this.username = user.displayName;
+      this.authService.setUserDetails(user.displayName,"","",user.email,"");
+      localStorage.setItem("profilePic",user.photoURL);
     }
+
     
   }
 
