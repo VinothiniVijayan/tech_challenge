@@ -1,8 +1,18 @@
 
 div{
     position: absolute;
-    margin-top: 60%;
-    bottom: 40%;
+    padding-top: 50%;
     left: 0;
     right: 0;
+    height: 100%;
+    background-color: #4885a9;
+}
+
+#container ion-item{
+    margin: 10px;
+}
+
+ion-button{
+    margin: 10px;
+    // background-color: #f78358 !important;
 }

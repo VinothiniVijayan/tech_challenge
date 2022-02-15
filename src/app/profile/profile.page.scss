@@ -13,12 +13,15 @@
         margin: 0 auto;
         overflow: hidden;
         ion-icon{
-            padding: 20px 0 0 17px;
+            padding: 20px 20px 16px 17px;
             width: 100px;
             height: 100px;
         }
-    img{
-        width: 100%;
+    ion-img {
+        padding:0px;
+        object-fit: cover !important;
+        height: 135px !important;
+        width: 135px !important;
     }
     }
     }
@@ -27,6 +30,7 @@
         width: 45%;
         display: inline;
         margin: 0 auto;
+        color: white;
     }
     .changePwdBtn{
         float: right;
@@ -43,4 +47,8 @@
 
     .saveBtn{
         float: right;
+    }
+
+    #container{
+        margin-top: 15px;
     }

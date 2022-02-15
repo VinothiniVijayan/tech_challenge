@@ -26,3 +26,10 @@ ion-menu-button {
 #container a {
   text-decoration: none;
 }
+
+.setBg{
+  background-image: url('/assets/icon/home_bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}

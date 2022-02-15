@@ -26,7 +26,10 @@ export class AppComponent {
     console.log("AppvErsion", this.appVersion.getVersionCode())
 
     const userDetails = JSON.parse(localStorage.getItem('userDetails'));
-    this.username = userDetails.firstName;
+    if(userDetails){
+    this.username = userDetails.firstName + " " + userDetails.lastName;
+    }
+    
   }
 
   logout(title) {

@@ -13,15 +13,12 @@
 <ion-content [fullscreen]="true" color="light" padding>
   <div id="container">
     <div profile-section text-center>
-      <div class="profile">
+      <div class="profile" (click)="uploadProfPic()">
         <ion-img *ngIf="base64Image" [src]="base64Image"></ion-img>
-        <ion-icon *ngIf="!base64Image" slot="start" ios="person-circle" md="person" (click)="uploadProfPic()">
+        <ion-icon *ngIf="!base64Image" slot="start" ios="person" md="person-sharp">
         </ion-icon>
 
       </div>
-      <button ion-button clear camera *ngIf="hideCamera" (click)="uploadProfPic()">
-        <ion-icon class="customIcon icon-camera"></ion-icon>
-      </button>
     </div>
     <ion-card>
     <ion-item no-lines>
@@ -57,8 +54,8 @@
   </div>
 </ion-content>
 <ion-footer class="ion-no-border">
-  <ion-button color="dark" expand="block" class="editBtn" fill="outline" [disabled]="isEdit" (click)="editDetails()">Edit</ion-button>
-  <ion-button color="dark" expand="block" class="changePwdBtn" fill="outline" (click)="changePassword()">Change Password
+  <ion-button color="primary" expand="block" class="editBtn" [disabled]="isEdit" (click)="editDetails()">Edit</ion-button>
+  <ion-button color="primary" expand="block" class="changePwdBtn" (click)="changePassword()">Change Password
   </ion-button>
 
 </ion-footer>
