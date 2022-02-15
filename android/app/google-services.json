@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "841041641794",
+    "firebase_url": "https://techchallenge-e102d-default-rtdb.firebaseio.com",
+    "project_id": "techchallenge-e102d",
+    "storage_bucket": "techchallenge-e102d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841041641794:android:003d02aabad8940a5c88db",
+        "android_client_info": {
+          "package_name": "com.test.techchallenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841041641794-6fc94aj6aq7ne84vd6u3ggkjc8d6gp7p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKJWgtqOOlLtoqiG-moHdiv8Ckb2ALEbw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841041641794-6fc94aj6aq7ne84vd6u3ggkjc8d6gp7p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

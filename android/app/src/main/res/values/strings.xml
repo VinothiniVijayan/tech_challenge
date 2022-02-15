@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">TechChallenge</string>
     <string name="title_activity_main">TechChallenge</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="package_name">com.test.techchallenge</string>
+    <string name="custom_url_scheme">com.test.techchallenge</string>
+    <string name="server_client_id">841041641794-6fc94aj6aq7ne84vd6u3ggkjc8d6gp7p.apps.googleusercontent.com</string>
 </resources>

@@ -5,6 +5,9 @@ import { Router } from "@angular/router";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { AlertController } from '@ionic/angular';
+import '@codetrix-studio/capacitor-google-auth';
+import { Plugins } from '@capacitor/core';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -56,10 +59,23 @@ export class AuthenticationService {
     const user = JSON.parse(localStorage.getItem('user'));
     return (user.emailVerified !== false) ? true : false;
   }
+
   // Sign in with Gmail
   GoogleAuth() {
-    return this.AuthLogin(new firebase.auth.GoogleAuthProvider());
+    return this.AuthLogin(new firebase.auth.GoogleAuthProvider());;
+    // const result = await GoogleAuth.signIn();
+    // if (result) { 
+    //   console.log(result);
+    //  }
   }
+
+  async googleSignup() {
+    const googleUser = await Plugins.GoogleAuth.signIn(null) as any;
+    console.log('my user: ', googleUser);
+    this.setUserDetails(googleUser.displayName,"","",googleUser.email,"")
+    this.router.navigate(['/folder/Home']);
+  }
+
   // Auth providers
   AuthLogin(provider) {
     return this.ngFireAuth.signInWithPopup(provider)
@@ -73,6 +89,21 @@ export class AuthenticationService {
         window.alert(error)
       })
   }
+
+  redirectApp(){
+    return this.ngFireAuth.signInWithRedirect(new firebase.auth.GoogleAuthProvider())
+      .then((result) => {
+        this.ngZone.run(() => {
+          this.router.navigate(['/folder/Home']);
+        })
+        console.log(result);
+        // this.SetUserData(result);
+      }).catch((error) => {
+        window.alert(error)
+      })
+
+  }
+
   // Store user in localStorage
   SetUserData(user) {
     const userRef: AngularFirestoreDocument<any> = this.afStore.doc(`users/${user.uid}`);

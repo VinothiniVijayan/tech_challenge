@@ -13,6 +13,7 @@ export class LoginPagePage implements OnInit {
   constructor(private router: Router, private authService: AuthenticationService, private alertController: AlertController) { }
 
   ngOnInit() {
+    
   }
 
   /**Register User */
@@ -38,9 +39,9 @@ export class LoginPagePage implements OnInit {
 
   /**Login with Gmail */
   loginWithGmail(){
-    this.authService.GoogleAuth();
-    const user = JSON.parse(localStorage.getItem('user'));
-    console.log("userdata",user);
+    // this.authService.GoogleAuth();
+    this.authService.googleSignup();
+
   }
 
   
